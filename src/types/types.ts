@@ -27,3 +27,10 @@ export type User = {
     address: Address;
     company: Company;
 };
+
+export type UserContextType = {
+    users: User[];
+    theme: string;
+    setTheme: React.Dispatch<React.SetStateAction<string>>;
+    changeTheme: () => void;
+};
