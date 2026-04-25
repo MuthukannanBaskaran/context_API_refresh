@@ -1,10 +1,11 @@
 import { useContext } from 'react'
-import ThemeContext from './ThemeContext'
+import ThemeContext from '../context/ThemeContext'
 import TestThemeChangeOne from './TestThemeChangeOne';
+import type { User } from '../types/types';
 
 export default function ChangeThemeButton() {
-    const data = useContext(ThemeContext);
-    console.log(data);
+    const data: User[] = useContext(ThemeContext);
+    console.log('ChangeThemeButton component', data);
     return (
         <div >
             <button>Change</button>
