@@ -1,6 +1,7 @@
 import { createContext, useEffect, useState, type ReactNode } from "react"
 import type { UserContextType, User } from "../types/types";
 import axios from 'axios';
+import useTheme from "../hooks/useTheme";
 
 const UserContext = createContext<UserContextType | null>(null);
 
@@ -25,11 +26,9 @@ async function getData() {
 }
 
 export const UserContextProvider = ({ children }: { children: ReactNode }) => {
-    const defaultTheme = localStorage.getItem("theme") || "yellow";
-    const [theme, setTheme] = useState(defaultTheme);
-    const changeTheme = () => {
-        setTheme((data => (data == "antiquewhite" ? "darkblue" : "antiquewhite")))
-    }
+
+    const { theme, changeTheme, setTheme } = useTheme()
+
     const [users, setUsers] = useState<User[]>([]);
     useEffect(() => {
         async function fetchData() {
