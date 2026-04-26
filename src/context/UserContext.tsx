@@ -25,9 +25,10 @@ async function getData() {
 }
 
 export const UserContextProvider = ({ children }: { children: ReactNode }) => {
-    const [theme, setTheme] = useState("White");
+    const defaultTheme = localStorage.getItem("theme") || "antiquewhite";
+    const [theme, setTheme] = useState(defaultTheme);
     const changeTheme = () => {
-        setTheme((data => (data == "White" ? "Dark" : "White")))
+        setTheme((data => (data == "antiquewhite" ? "darkblue" : "antiquewhite")))
     }
     const [users, setUsers] = useState<User[]>([]);
     useEffect(() => {
@@ -36,7 +37,8 @@ export const UserContextProvider = ({ children }: { children: ReactNode }) => {
             setUsers(data);
         }
         fetchData();
-    }, [])
+        localStorage.setItem("theme", theme);
+    }, [theme])
 
     return (
         <UserContext.Provider value={{ users, theme, changeTheme, setTheme }}>
