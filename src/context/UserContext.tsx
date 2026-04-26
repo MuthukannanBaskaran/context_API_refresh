@@ -25,7 +25,7 @@ async function getData() {
 }
 
 export const UserContextProvider = ({ children }: { children: ReactNode }) => {
-    const defaultTheme = localStorage.getItem("theme") || "antiquewhite";
+    const defaultTheme = localStorage.getItem("theme") || "yellow";
     const [theme, setTheme] = useState(defaultTheme);
     const changeTheme = () => {
         setTheme((data => (data == "antiquewhite" ? "darkblue" : "antiquewhite")))

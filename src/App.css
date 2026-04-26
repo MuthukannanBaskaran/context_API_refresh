@@ -208,6 +208,17 @@
   color: darkblue !important;
 }
 
+.yellow {
+  background-color: yellow;
+  color: green !important;
+  border: 0.5rem solid green;
+}
+
+.yellow * {
+  background-color: yellow;
+  color: green !important;
+}
+
 button {
   width: auto;
   padding: 0.625rem;
