@@ -34,3 +34,9 @@ export type UserContextType = {
     setTheme: React.Dispatch<React.SetStateAction<string>>;
     changeTheme: () => void;
 };
+
+export type LanguageContextType = {
+    language: string;
+    setLanguage: React.Dispatch<React.SetStateAction<string>>;
+    changeLanguage: () => void;
+};

@@ -21,7 +21,6 @@ export default function UserOne() {
             </div>
             <h1>Theme One: {theme}</h1>
             <hr />
-            <hr />
             <UserTwo />
         </>
     )
